@@ -140,7 +140,7 @@
   .step-text strong { color: var(--white); font-weight: 500; }
 
   /* WIDGET CARD */
-  .widget-wrap { padding: 0 1.25rem; }
+  .widget-wrap { padding: 0 1.25rem; max-width: 600px; margin: 0 auto; }
 
   .widget-card {
     background: var(--white);
@@ -802,14 +802,13 @@ async function runCheck() {
   document.getElementById('shortlistActions').style.display = 'none';
 
   try {
-    const [motRes, ulezRes, companyRes] = await Promise.all([
+    const [motRes, ulezRes] = await Promise.all([
       fetch(`${WORKER}/mot/${raw}`).then(r => r.json()).catch(() => null),
       fetch(`${WORKER}/ulez/${raw}`).then(r => r.json()).catch(() => null),
-      fetch(`${WORKER}/company/${raw}`).then(r => r.json()).catch(() => null),
     ]);
 
     document.getElementById('loading').style.display = 'none';
-    renderResults(raw, motRes, ulezRes, companyRes);
+    renderResults(raw, motRes, ulezRes);
 
   } catch(err) {
     document.getElementById('loading').style.display = 'none';
@@ -819,7 +818,7 @@ async function runCheck() {
   btn.disabled = false;
 }
 
-function renderResults(reg, mot, ulez, company) {
+function renderResults(reg, mot, ulez) {
   let flags = 0;
   let warnings = 0;
 
@@ -891,23 +890,9 @@ function renderResults(reg, mot, ulez, company) {
     ulezEl.textContent = 'Full report';
   }
 
-  // Company
-  const flagDot = document.getElementById('flagDot');
-  const flagText = document.getElementById('flagText');
-
-  if (company && company.items && company.items.length > 0) {
-    const top = company.items[0];
-    const active = top.company_status === 'active';
-    flagDot.className = 'flag-dot ' + (active ? 'found' : 'warn');
-    flagText.textContent = active
-      ? `Registered company found. Full seller analysis in the paid report.`
-      : `Company found but status is "${top.company_status}" — check the full report before proceeding.`;
-    if (!active) warnings++;
-  } else {
-    flagDot.className = 'flag-dot bad';
-    flagText.textContent = 'No registered company found. Significant flag — see the full report before proceeding.';
-    flags++;
-  }
+  // Company flag — paid report only, not shown in free widget
+  const companyFlag = document.getElementById('companyFlag');
+  if (companyFlag) companyFlag.style.display = 'none';
 
   // Verdict
   const banner = document.getElementById('verdictBanner');
