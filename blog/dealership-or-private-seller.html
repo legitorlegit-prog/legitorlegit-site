@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Which is Safer, Dealership or Private Seller? | Legit or Leg It</title>
+  <meta name="description" content="Most people assume dealer means safer. The reality is more complicated — and the gap is where the scams live.">
+  <meta property="og:title" content="Which is Safer, Dealership or Private Seller?">
+  <meta property="og:description" content="Most people assume dealer means safer. The reality is more complicated — and the gap is where the scams live.">
+  <meta property="og:type" content="article">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Figtree:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --dark: #18181B;
+      --dark-2: #27272A;
+      --yellow: #E8B84B;
+      --green: #3B6D11;
+      --green-light: #4a8a15;
+      --off-white: #FAFAF8;
+      --border: #E4E4E7;
+      --muted: #71717A;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { font-size: 16px; scroll-behavior: smooth; }
+
+    body {
+      background: var(--off-white);
+      color: var(--dark);
+      font-family: 'Figtree', sans-serif;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    nav {
+      background: var(--dark);
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-brand {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .nav-brand span { color: var(--yellow); }
+
+    .nav-cta {
+      background: var(--yellow);
+      color: var(--dark);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 0.5rem 1.2rem;
+      border-radius: 2px;
+      transition: opacity 0.15s;
+    }
+
+    .nav-cta:hover { opacity: 0.85; }
+
+    /* HERO */
+    .hero {
+      background: var(--dark);
+      padding: 4rem 2rem 3.5rem;
+      text-align: center;
+    }
+
+    .hero-kicker {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--yellow);
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(2.4rem, 6vw, 4rem);
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.05;
+      text-transform: uppercase;
+      letter-spacing: 0.01em;
+      max-width: 800px;
+      margin: 0 auto 1rem;
+    }
+
+    .hero h1 em {
+      color: var(--yellow);
+      font-style: normal;
+    }
+
+    .hero-sub {
+      font-family: 'Figtree', sans-serif;
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.55);
+      font-style: italic;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    /* ARTICLE */
+    .article-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 3.5rem 2rem 5rem;
+    }
+
+    .article-wrap p {
+      font-size: 1.075rem;
+      margin-bottom: 1.4rem;
+      color: #2a2a2d;
+    }
+
+    .article-wrap p:last-child { margin-bottom: 0; }
+
+    .article-wrap h2 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      color: var(--dark);
+      margin: 3rem 0 1.2rem;
+      padding-top: 0.5rem;
+      border-top: 3px solid var(--yellow);
+      display: inline-block;
+    }
+
+    /* Pull quote / scene block */
+    .scene {
+      background: var(--dark);
+      color: rgba(255,255,255,0.9);
+      padding: 2rem 2.2rem;
+      border-left: 4px solid var(--yellow);
+      margin: 2.5rem 0;
+      border-radius: 0 4px 4px 0;
+    }
+
+    .scene p {
+      color: rgba(255,255,255,0.88) !important;
+      font-size: 1.05rem !important;
+      margin-bottom: 0.9rem;
+    }
+
+    .scene p:last-child { margin-bottom: 0; }
+
+    /* Check list */
+    .checklist {
+      margin: 1.5rem 0 2rem;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.4rem;
+    }
+
+    .checklist li {
+      padding-left: 0;
+    }
+
+    .check-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--dark);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .check-title::before {
+      content: '';
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      background: var(--green);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .checklist p {
+      padding-left: 1.6rem;
+      font-size: 1rem !important;
+      color: #3a3a3d !important;
+      margin-bottom: 0 !important;
+    }
+
+    /* Verdict */
+    .verdict {
+      background: var(--green);
+      color: #fff;
+      padding: 2.5rem 2.2rem;
+      border-radius: 4px;
+      margin: 3rem 0 2rem;
+      text-align: center;
+    }
+
+    .verdict-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 0.8rem;
+    }
+
+    .verdict p {
+      font-size: 1.2rem !important;
+      font-weight: 600;
+      color: #fff !important;
+      line-height: 1.5;
+      max-width: 520px;
+      margin: 0 auto !important;
+    }
+
+    /* CTA block */
+    .cta-block {
+      background: var(--dark);
+      border-radius: 4px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      margin: 0;
+    }
+
+    .cta-block p {
+      color: rgba(255,255,255,0.7) !important;
+      font-size: 1rem !important;
+      max-width: 460px;
+      margin: 0 auto 1.6rem !important;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: var(--yellow);
+      color: var(--dark);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 0.9rem 2.2rem;
+      border-radius: 2px;
+      transition: opacity 0.15s;
+    }
+
+    .cta-button:hover { opacity: 0.85; }
+
+    .cta-price {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      color: rgba(255,255,255,0.35);
+      text-transform: uppercase;
+      margin-top: 0.8rem !important;
+    }
+
+    /* Divider */
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2.5rem 0;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--dark-2);
+      color: rgba(255,255,255,0.4);
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.82rem;
+    }
+
+    footer a { color: rgba(255,255,255,0.5); }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .hero { padding: 2.5rem 1.2rem 2.5rem; }
+      .article-wrap { padding: 2.5rem 1.2rem 4rem; }
+      .scene { padding: 1.5rem 1.4rem; }
+      .cta-block { padding: 2rem 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-brand" href="/">LEGIT OR <span>LEG IT</span></a>
+    <a class="nav-cta" href="/#check">Check a car</a>
+  </nav>
+
+  <header class="hero">
+    <p class="hero-kicker">Used car buying guide</p>
+    <h1>Which is Safer,<br>Dealership or <em>Private Seller?</em></h1>
+    <p class="hero-sub">When is a dealership not a dealership.</p>
+  </header>
+
+  <main class="article-wrap">
+
+    <p>Most people assume the answer is obvious. Dealership means protection. Private seller means risk. Pay a little more, buy from a dealer, sleep easier.</p>
+
+    <p>You'd think so, wouldn't you.</p>
+
+    <h2>Why the dealership feels like the safer choice</h2>
+
+    <p>You know who you are buying from. There are premises. There are staff. The business was there yesterday and will be there tomorrow.</p>
+
+    <p>If something goes wrong, you have something to fall back on. You have your statutory rights. If the wheels fall off — literally or otherwise — you can return the car. You can get your money back.</p>
+
+    <p>With a private seller, you have none of that protection. And even where some technical rights exist, we all know the reality — if the car breaks down after you get it home, you're on your own. Once that cash has changed hands, it's gone.</p>
+
+    <p>The difference is — you know that buying privately. You go in with your eyes open.</p>
+
+    <p>So you make very sure. You get a report on the car. You get a mechanic to look it over. You do your homework because you know nobody else is doing it for you.</p>
+
+    <p>With a dealer, you might not bother. You think the protection is built in. You relax. After all, it's what you're paying for — that and the liberal coat of polish.</p>
+
+    <p>Imagine the horror, then, when something goes wrong — and you did none of those checks — and you find out you may as well have bought your car from Brian on Gumtree.</p>
+
+    <h2>How this happens</h2>
+
+    <p>Some dealerships sell certain cars under a different name. Sometimes completely different. Sometimes just slightly — enough that you might not notice until you're looking for it.</p>
+
+    <p>Why? Because they've already identified it as a potential liability. The kind of car that gets returned. And they don't want that. The forecourt gives it credibility. The separate name makes it hard to chase if anything goes wrong.</p>
+
+    <p>You visited the dealership. You paid at the dealership. But the paperwork — if you read it carefully — might tell a different story. A trading name that doesn't appear on Companies House. A name you can't trace. And can't chase.</p>
+
+    <div class="scene">
+      <p>Imagine you get home and the car breaks down. You want to send it back. You call them — no answer. You write to them — nothing. You dig out your invoice and something doesn't look right.</p>
+      <p>The name on the paperwork doesn't match the dealership you visited. The bank details are handwritten. There's no company registration number anywhere. And then reality dawns. You have no idea who Brian even was.</p>
+      <p>You phone the bank. They tell you there is nothing they can do. You paid by bank transfer.</p>
+      <p>You are in exactly the same position as a private sale. But you paid dealer prices. Just for an extra coat of polish.</p>
+    </div>
+
+    <h2>When this is most likely to happen</h2>
+
+    <p>Most often at the lower end of a dealer's stock — cars that don't quite fit their usual range, priced below what they'd normally sell. The car gets listed. The sale happens. The accountability doesn't follow.</p>
+
+    <p>But don't assume it only happens with cheaper cars. A well-presented car at a premium price can be sold under exactly the same arrangement. The quality of the showroom doesn't tell you which legal entity is actually taking your money.</p>
+
+    <p>And increasingly, you never see the showroom at all. A distance sale — a car bought online and delivered to you — looks exactly the same whether the dealer is completely legitimate or operating under a name that doesn't exist on any register. You never had the physical cues that might have made you pause. The website looked professional. The listing looked like every other listing. You had no reason to doubt it.</p>
+
+    <p>If you're thinking — why not just go down there and have it out with them in person — the decision maker is never there. He's always at the other garage. You don't know where the other garage is. His solicitors are dealing with it. You don't know who they are.</p>
+
+    <h2>What to check before you hand over anything</h2>
+
+    <p>These are the checks you would have done buying from Brian on Gumtree. Do them here too.</p>
+
+    <ul class="checklist">
+      <li>
+        <div class="check-title">Search the trading name on Companies House</div>
+        <p>Does the name on the listing match a registered company? Is the address the same as the forecourt? How long have they been trading? If the name doesn't come up, that tells you something important.</p>
+      </li>
+      <li>
+        <div class="check-title">Ask for the company registration number</div>
+        <p>Every registered business has one. It's public information. A legitimate seller gives it without hesitation. They won't give it to you? That's your answer.</p>
+      </li>
+      <li>
+        <div class="check-title">Check the name across platforms</div>
+        <p>Paste the phone number from the listing into Google. Search it on AutoTrader, Facebook Marketplace, and Motors separately. The same number appearing under different trading names is a serious signal. Legitimate businesses don't need multiple identities.</p>
+      </li>
+      <li>
+        <div class="check-title">Pay by credit card</div>
+        <p>This one matters enough to have its own post — <a href="/blog/section-75">read it here</a>. The short version: even £1 on a credit card activates Section 75 protection across the full purchase price. Bank transfer has no equivalent. Once that money is gone, it is gone.</p>
+      </li>
+    </ul>
+
+    <div class="verdict">
+      <div class="verdict-label">The short version</div>
+      <p>The forecourt is not the guarantee. Knowing who you're actually buying from is. Do the checks. All of them. Every time. Even when — especially when — you think you don't need to.</p>
+    </div>
+
+    <div class="cta-block">
+      <p>Legit or Leg It checks the seller, the listing, and your consumer rights — in plain English, before you commit.</p>
+      <a class="cta-button" href="/#check">Check your car now</a>
+      <p class="cta-price">From £15 — single report</p>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Maltings Digital Ltd &nbsp;·&nbsp; Trading as Legit or Leg It &nbsp;·&nbsp; <a href="/legal">Terms &amp; Privacy</a></p>
+  </footer>
+
+</body>
+</html>
