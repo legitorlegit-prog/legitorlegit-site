@@ -754,7 +754,10 @@
         <button class="drop-btn" onclick="dropCar()">Drop this one</button>
       </div>
 
-      <div class="data-grid">
+     <div id="vehicleIdentity" style="display:none;background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:12px 16px;margin-bottom:12px;">
+            <div style="font-size:11px;color:var(--hint);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px;">Vehicle</div>
+            <div id="vehicleDescription" style="font-size:18px;font-weight:700;color:var(--text);"></div>
+          </div> <div class="data-grid">
         <div class="data-cell">
           <div class="data-label">MOT Status</div>
           <div class="data-value" id="motStatus">—</div>
@@ -1003,7 +1006,15 @@ function renderResults(reg, mot, ulez) {
 
   if (mot && !mot.error) {
     const vehicle = mot;
-    const tests = vehicle.motTests || [];
+   const colour = vehicle.primaryColour || '';
+    const make = vehicle.make || '';
+    const model = vehicle.model || '';
+    const year = vehicle.firstUsedDate ? new Date(vehicle.firstUsedDate).getFullYear() : '';
+    const desc = [colour, make, model, year].filter(Boolean).join(' ');
+    if (desc) {
+      document.getElementById('vehicleDescription').textContent = desc;
+      document.getElementById('vehicleIdentity').style.display = 'block';
+    } const tests = vehicle.motTests || [];
     const latest = tests[0];
 
     if (latest) {
