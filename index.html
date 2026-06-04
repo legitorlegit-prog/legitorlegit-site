@@ -1046,11 +1046,11 @@ function renderResults(reg, mot, ulez) {
       }
 
      const fuelType = (vehicle.fuelType || '').toUpperCase();
-      const isElectric = fuelType === 'ELECTRICITY' || fuelType === 'ELECTRIC';
+      const isElectric = fuelType === 'ELECTRICITY' || fuelType === 'ELECTRIC' || (!vehicle.engineSize && (vehicle.fuelType === undefined || vehicle.fuelType === null));
 
       if (isElectric) {
         document.getElementById('engineSize').textContent = 'Electric';
-        document.getElementById('roadTax').textContent = '£0';
+        document.getElementById('roadTax').textContent = '£190' ;
         document.getElementById('insGroup').textContent = 'Full report';
         document.getElementById('insGroupSub').textContent = '';
       } else if (vehicle.engineSize) {
