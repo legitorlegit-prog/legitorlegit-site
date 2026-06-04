@@ -1000,6 +1000,7 @@ async function runCheck() {
 function renderResults(reg, mot, ulez) {
   let flags = 0;
   let warnings = 0;
+    let isElectric = false;
 
   const motEl = document.getElementById('motStatus');
   const motExp = document.getElementById('motExpiry');
