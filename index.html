@@ -1046,7 +1046,7 @@ function renderResults(reg, mot, ulez) {
       }
 
      const fuelType = (vehicle.fuelType || '').toUpperCase();
-     isElectric = fuelType === 'ELECTRICITY' || fuelType === 'ELECTRIC' || (!vehicle.engineSize && (vehicle.fuelType === undefined || vehicle.fuelType === null));
+     isElectric = fuelType === 'ELECTRICITY' || fuelType === 'ELECTRIC' || !vehicle.engineSize;
 
       if (isElectric) {
         document.getElementById('engineSize').textContent = 'Electric';
