@@ -1044,7 +1044,15 @@ function renderResults(reg, mot, ulez) {
         document.getElementById('lastMileage').textContent = 'Not recorded';
       }
 
-      if (vehicle.engineSize) {
+     const fuelType = (vehicle.fuelType || '').toUpperCase();
+      const isElectric = fuelType === 'ELECTRICITY' || fuelType === 'ELECTRIC';
+
+      if (isElectric) {
+        document.getElementById('engineSize').textContent = 'Electric';
+        document.getElementById('roadTax').textContent = '£0';
+        document.getElementById('insGroup').textContent = 'Full report';
+        document.getElementById('insGroupSub').textContent = '';
+      } else if (vehicle.engineSize) {
         const cc = parseInt(vehicle.engineSize) || 0;
         document.getElementById('engineSize').textContent = `${cc}cc`;
         document.getElementById('roadTax').textContent = cc <= 1549 ? '£195' : '£325';
@@ -1057,7 +1065,6 @@ function renderResults(reg, mot, ulez) {
         document.getElementById('insGroup').textContent = 'Full report';
         document.getElementById('insGroupSub').textContent = '';
       }
-
     } else {
       motEl.textContent = 'No MOT found';
       motEl.className = 'data-value bad';
@@ -1070,7 +1077,7 @@ function renderResults(reg, mot, ulez) {
   }
 
   const ulezEl = document.getElementById('ulezStatus');
-  if (ulez && !ulez.error) {
+ if (isElectric) { ulezEl.innerHTML = '<span class="ulez-pass">✓ Compliant</span>'; } else if (ulez && !ulez.error) {
     const compliant = ulez.compliant === true || ulez.complianceStatus === 'compliant';
     ulezEl.innerHTML = compliant
       ? '<span class="ulez-pass">✓ Compliant</span>'
