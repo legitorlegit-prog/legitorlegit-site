@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cat S, Cat N, Cat A, Cat B — What the Damage Categories Actually Mean | Legit or Leg It</title>
+<meta name="description" content="A letter in a used car listing can save you thousands — or tell you to walk away. What Cat S, Cat N, Cat A and Cat B actually mean, and what to do if you find one.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Figtree:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Figtree', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #F1EFE8;
+    color: #1a1a1a;
+    line-height: 1.7;
+  }
+
+  nav {
+    background: #18181B;
+    padding: 0 1.5rem;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .brand {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .brand em { font-style: normal; color: #E8B84B; }
+  .nav-cta {
+    background: #E8B84B;
+    color: #18181B;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 8px 18px;
+    border-radius: 4px;
+    text-decoration: none;
+  }
+  .nav-cta:hover { background: #d4a43c; }
+
+  .hero {
+    background: #18181B;
+    padding: 4rem 1.5rem 4.5rem;
+    text-align: center;
+  }
+  .hero-eyebrow {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: #3B6D11;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(34px, 6.5vw, 58px);
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.05;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    max-width: 760px;
+    margin: 0 auto 20px;
+  }
+  .hero h1 span { color: #E8B84B; }
+  .hero-sub {
+    font-size: 17px;
+    color: rgba(255,255,255,0.5);
+    font-style: italic;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
+  .article-wrap {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 4rem;
+  }
+
+  .section-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: #3B6D11;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    margin-top: 2rem;
+  }
+
+  .intro {
+    background: #fff;
+    border-radius: 4px;
+    border: 1px solid #E4E4E7;
+    padding: 2rem;
+    margin-bottom: 1.25rem;
+  }
+  .intro p {
+    font-size: 17px;
+    color: #333;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+  }
+  .intro p:last-child { margin-bottom: 0; }
+  .intro strong { color: #18181B; font-weight: 600; }
+
+  .content-card {
+    background: #fff;
+    border-radius: 4px;
+    border: 1px solid #E4E4E7;
+    padding: 1.75rem 2rem;
+    margin-bottom: 1.25rem;
+  }
+  .content-card h2 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+    color: #18181B;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    margin-bottom: 1rem;
+    line-height: 1.15;
+  }
+  .content-card p {
+    font-size: 15px;
+    color: #444;
+    line-height: 1.8;
+    margin-bottom: 0.9rem;
+  }
+  .content-card p:last-child { margin-bottom: 0; }
+  .content-card strong { color: #18181B; font-weight: 600; }
+  .content-card a { color: #E8B84B; text-decoration: none; border-bottom: 1px solid rgba(232,184,75,0.3); }
+  .content-card a:hover { border-bottom-color: #E8B84B; }
+
+  .category-item {
+    border-top: 1px solid #f0f0ec;
+    padding: 1.25rem 0;
+  }
+  .category-item:first-of-type { border-top: none; padding-top: 0; }
+  .category-item:last-of-type { padding-bottom: 0; }
+  .category-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .cat-a { color: #C0392B; }
+  .cat-b { color: #E67E22; }
+  .cat-s { color: #E8B84B; }
+  .cat-n { color: #3B6D11; }
+  .category-item p {
+    font-size: 15px;
+    color: #444;
+    line-height: 1.8;
+  }
+
+  .warning {
+    background: #F8F7F3;
+    border-left: 4px solid #E8B84B;
+    border-radius: 0 4px 4px 0;
+    padding: 1.25rem 1.5rem;
+    margin: 1rem 0;
+    font-size: 15px;
+    color: #333;
+    line-height: 1.8;
+  }
+  .warning strong { color: #18181B; }
+
+  .verdict-block {
+    background: #18181B;
+    border-radius: 4px;
+    padding: 1.75rem 2rem;
+    margin-bottom: 1.25rem;
+  }
+  .verdict-block h2 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    margin-bottom: 1rem;
+  }
+  .verdict-row {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    padding: 0.9rem 0;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  .verdict-row:first-of-type { border-top: none; }
+  .verdict-tag {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 3px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .tag-legit { background: #3B6D11; color: #fff; }
+  .tag-advisory { background: #E8B84B; color: #18181B; }
+  .tag-legit-out { background: #C0392B; color: #fff; }
+  .verdict-text {
+    font-size: 15px;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.75;
+  }
+  .verdict-text strong { color: #fff; }
+
+  .next-post {
+    background: #fff;
+    border-radius: 4px;
+    border: 1px solid #E4E4E7;
+    border-left: 4px solid #3B6D11;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 1.25rem;
+  }
+  .next-post p {
+    font-size: 15px;
+    color: #444;
+    line-height: 1.8;
+    margin-bottom: 0.5rem;
+  }
+  .next-post p:last-child { margin-bottom: 0; }
+  .next-post a {
+    color: #E8B84B;
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(232,184,75,0.3);
+  }
+  .next-post a:hover { border-bottom-color: #E8B84B; }
+
+  .cta-block {
+    background: #18181B;
+    border-radius: 4px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    margin-top: 2rem;
+  }
+  .cta-block h2 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    margin-bottom: 12px;
+  }
+  .cta-block h2 span { color: #E8B84B; }
+  .cta-block p {
+    font-size: 15px;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.75;
+    margin-bottom: 1.5rem;
+    max-width: 460px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .cta-buttons { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+  .btn-primary {
+    background: #E8B84B;
+    color: #18181B;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 12px 28px;
+    border-radius: 4px;
+    text-decoration: none;
+  }
+  .btn-primary:hover { background: #d4a43c; }
+  .btn-secondary {
+    background: transparent;
+    color: rgba(255,255,255,0.6);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 12px 28px;
+    border-radius: 4px;
+    text-decoration: none;
+    border: 1px solid rgba(255,255,255,0.15);
+  }
+  .btn-secondary:hover { border-color: rgba(255,255,255,0.35); color: #fff; }
+
+  footer {
+    background: #18181B;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    font-size: 13px;
+    color: rgba(255,255,255,0.3);
+  }
+  footer a { color: rgba(255,255,255,0.4); text-decoration: none; }
+  footer a:hover { color: rgba(255,255,255,0.7); }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="brand"><em>Legit</em> or Leg It</a>
+  <a href="/" class="nav-cta">Free Check</a>
+</nav>
+
+<div class="hero">
+  <p class="hero-eyebrow">Used Car Buying Guide</p>
+  <h1>Damage Repaired<span>?</span></h1>
+  <p class="hero-sub">What the categories actually mean — Cat S, Cat N, Cat A and Cat B — and what to do if you find one.</p>
+</div>
+
+<div class="article-wrap">
+
+  <div class="intro">
+    <p>The letter appears almost as an afterthought. "Cat S — fully repaired." And most buyers either don't know what it means, or take the seller's word that it's fine.</p>
+    <p>Here's what it actually means.</p>
+  </div>
+
+  <div class="section-label">The four categories</div>
+
+  <div class="content-card">
+    <h2>What changed in 2017</h2>
+    <p>In 2017, the insurance industry changed how it classifies damaged vehicles. The old Cat C and Cat D were replaced with Cat S and Cat N. A lot of listings still use the old terms. A lot of buyers are still confused by both.</p>
+    <p>If you see Cat C or Cat D on a listing, treat it as Cat S or Cat N respectively — and apply everything below.</p>
+
+    <div class="category-item">
+      <div class="category-label cat-a">Cat A — Crush only</div>
+      <p>The car must be destroyed entirely. It cannot return to the road. No parts, no repairs, no exceptions. If you see a Cat A car for sale, walk away and report it.</p>
+    </div>
+
+    <div class="category-item">
+      <div class="category-label cat-b">Cat B — Body shell destroyed</div>
+      <p>The body shell must be crushed, but salvageable parts can be removed first. Like Cat A, a Cat B car should never be on a road. If it is, something has gone seriously wrong.</p>
+    </div>
+
+    <div class="category-item">
+      <div class="category-label cat-s">Cat S — Structural damage</div>
+      <p>The frame or chassis was damaged significantly enough that the insurer wrote the car off. It can be repaired and returned to the road. It must be declared on every future sale.</p>
+    </div>
+
+    <div class="category-item">
+      <div class="category-label cat-n">Cat N — Non-structural damage</div>
+      <p>Bodywork, electrics, trim. The insurer wrote it off because the repair cost wasn't worth it to them — not because the frame was affected. Also must be declared on every future sale.</p>
+    </div>
+  </div>
+
+  <div class="section-label">The problem with Cat S</div>
+
+  <div class="content-card">
+    <h2>Why the MOT won't save you</h2>
+    <p>A properly repaired Cat S can be roadworthy. But the structural frame is what protects you in another accident. If the repair wasn't done correctly, crumple zones may not perform as designed. Alignment issues develop over time. Corrosion starts at repair points and stays invisible until it's serious.</p>
+    <p>An MOT won't catch any of this. MOTs check that a car is roadworthy on the day. They don't inspect the quality of structural repairs.</p>
+    <div class="warning">
+      <strong>The connected garage problem.</strong> Some Cat S cars are bought by garages, repaired, and sold on. Some of those garages have connected MOT stations — another arm of the same business, or a related company. The MOT that signed off the repair may not be as independent as it looks. Before buying a Cat S car, you need an inspection from someone with no connection to the seller. A structural specialist. Not the seller's preferred garage. Not the place that did the repair.
+    </div>
+  </div>
+
+  <div class="section-label">The price question</div>
+
+  <div class="content-card">
+    <h2>No discount. No deal.</h2>
+    <p>A Cat S or Cat N stays on the record of that vehicle permanently. Every future buyer will see it. Every insurer will price it differently. When you come to sell, you'll be competing against clean cars — and the history will cost you.</p>
+    <p>So the price you pay now should reflect that.</p>
+    <p>Ask what the clean market value is. Look it up. If the Cat S car is priced anywhere near that figure, walk away. The discount isn't a bonus. It's the only reason a Cat S car makes financial sense to buy.</p>
+    <p><strong>No discount. No deal.</strong></p>
+  </div>
+
+  <div class="section-label">What to do</div>
+
+  <div class="content-card">
+    <h2>When to proceed — and when not to</h2>
+    <p>If you work in the trade, you might be perfectly happy with a Cat S. You understand what you're looking at. You know what a good structural repair looks like. You want that high-spec car at a knock-down price and you know how to protect yourself.</p>
+    <p>That's fine. This post isn't for you.</p>
+    <p>For everyone else — a first-time buyer, someone who needs a reliable car and can't afford to get it wrong — the advice is simpler.</p>
+    <p><strong>Declared Cat S or N:</strong> Unless you genuinely know what you're doing and can get a truly independent structural inspection, walk away. There are plenty of clean cars. Find one of those instead.</p>
+    <p><strong>Undeclared Cat S or N:</strong> This one isn't a car decision. It's a people decision. The seller already lied to you — before you met them, before you asked a single question. The car might be perfectly repaired. It doesn't matter. If the first thing they did was hide the history, what else aren't they telling you?</p>
+  </div>
+
+  <div class="verdict-block">
+    <h2>How Legit or Leg It reads it</h2>
+    <div class="verdict-row">
+      <span class="verdict-tag tag-legit">Likely Legit</span>
+      <p class="verdict-text">No damage history found. Clean record on this vehicle.</p>
+    </div>
+    <div class="verdict-row">
+      <span class="verdict-tag tag-advisory">Advisory</span>
+      <p class="verdict-text"><strong>Cat N declared.</strong> Non-structural damage on record. Seller has declared it. Check the price reflects the history — and consider an independent inspection before committing.</p>
+    </div>
+    <div class="verdict-row">
+      <span class="verdict-tag tag-legit-out">Leg It</span>
+      <p class="verdict-text"><strong>Cat S not declared in listing.</strong> Structural damage found on this vehicle's record. It was not mentioned in the listing. We wouldn't be comfortable with our own people driving this one.</p>
+    </div>
+  </div>
+
+  <div class="section-label">What the data doesn't show</div>
+
+  <div class="next-post">
+    <p>Not all damage makes it onto the record. Private repairs that never went through an insurer leave no trace in the data.</p>
+    <p>Previous listing photos sometimes tell the story the record doesn't. Panel gaps. Overspray. Boot seams that don't quite line up. There are things to look for — and knowing what they are before you drive to the viewing is half the battle.</p>
+    <p><a href="/blog/how-to-tell-if-a-used-car-has-hidden-damage">How to tell if a used car has hidden damage →</a></p>
+  </div>
+
+  <div class="cta-block">
+    <h2>Have you <span>Legit</span> checked it?</h2>
+    <p>Run the free check before the viewing. If there's a Cat S or N on this car's record — declared or not — you'll know before you get in the car.</p>
+    <div class="cta-buttons">
+      <a href="/" class="btn-primary">Run the free check</a>
+      <a href="/" class="btn-secondary">See the full report</a>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <p>
+    <a href="/">legitorlegit.co.uk</a> &nbsp;·&nbsp;
+    <a href="/blog/">Blog</a> &nbsp;·&nbsp;
+    <a href="/legal/">Legal</a>
+  </p>
+  <p style="margin-top: 8px; font-size: 10px; opacity: 0.6;">t/a Maltings Digital LTD</p>
+</footer>
+
+</body>
+</html>
