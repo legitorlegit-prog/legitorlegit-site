@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sample Report — Legit or Leg It</title>
+<meta name="description" content="A sample Legit or Leg It full report — see exactly what you get: the car's history, the seller verified, the price checked, and what to do next.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<style>
+
+  :root {
+    --black:       #1C1C19;
+    --dark:        #18181B;
+    --dark-2:      #27272A;
+    --dark-3:      #3F3F46;
+    --gold-logo:   #C9941A;
+    --gold-body:   #E8B84B;
+    --cream:       #F5F3EE;
+    --cream-dark:  #EDE9E0;
+    --white:       #FFFFFF;
+    --off-white:   #FAFAF8;
+    --hint:        #A1A1AA;
+    --muted-dark:  #71717A;
+    --green:       #3B7A2A;
+    --green-light: #EAF3DE;
+    --green-border:#97C459;
+    --amber:       #BA7517;
+    --amber-light: #FAEEDA;
+    --amber-border:#EF9F27;
+    --red:         #B91C1C;
+    --red-light:   #FEF2F2;
+    --red-border:  #FCA5A5;
+    --text:        #1C1C19;
+    --text-mid:    #555;
+    --text-muted:  #888;
+    --border:      #DDD9D0;
+    --font-head:   'Barlow Condensed', sans-serif;
+    --font-body:   'Figtree', sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--off-white);
+    color: var(--text);
+    padding: 2rem 1rem 4rem;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+
+  /* SAMPLE BANNER */
+  .sample-banner {
+    background: var(--gold-body);
+    color: var(--black);
+    text-align: center;
+    padding: 0.6rem 1rem;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+
+  .report-header {
+    background: var(--dark);
+    padding: 1.5rem 1.75rem 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .brand-mark {
+    font-family: var(--font-head);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .brand-mark span { color: var(--gold-body); }
+
+  .report-meta {
+    text-align: right;
+    font-size: 11px;
+    color: var(--muted-dark);
+    line-height: 1.8;
+  }
+
+  .vehicle-bar {
+    background: var(--dark);
+    padding: 0.25rem 1.75rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 1rem;
+  }
+
+  .reg-plate {
+    display: inline-block;
+    font-family: var(--font-head);
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: var(--dark);
+    background: var(--gold-body);
+    border: 2px solid var(--gold-logo);
+    border-radius: 8px;
+    padding: 4px 18px;
+    line-height: 1.25;
+  }
+
+  .vehicle-name {
+    font-size: 13px;
+    color: var(--hint);
+    margin-top: 8px;
+  }
+
+  .asking-price { text-align: right; }
+
+  .asking-price-label {
+    font-size: 11px;
+    color: var(--muted-dark);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .asking-price-value {
+    font-family: var(--font-head);
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--gold-body);
+    letter-spacing: 0.02em;
+  }
+
+  .verdict-zone {
+    background: var(--dark);
+    padding: 0 1.75rem 1.25rem;
+  }
+
+  .verdict-banner {
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    border-radius: 12px;
+    border: 1.5px solid;
+  }
+
+  .verdict-banner.verdict--legit { background: var(--green-light); border-color: var(--green-border); }
+
+  .verdict-icon {
+    font-size: 32px;
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .verdict-label {
+    font-family: var(--font-head);
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    line-height: 1;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    color: var(--green);
+  }
+
+  .verdict-headline {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+    margin-bottom: 4px;
+    color: var(--green);
+  }
+
+  .verdict-summary {
+    font-size: 13px;
+    line-height: 1.65;
+    color: #44403C;
+  }
+
+  .stats-row {
+    background: var(--dark);
+    padding: 1.25rem 1.75rem 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+  }
+
+  .stat {
+    background: var(--dark-2);
+    border: 1.5px solid var(--dark-3);
+    border-radius: 10px;
+    padding: 0.75rem 0.875rem;
+  }
+
+  .stat-label {
+    font-size: 10px;
+    color: var(--muted-dark);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 4px;
+  }
+
+  .stat-value {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--white);
+  }
+
+  .stat-value.green { color: #4ADE80; }
+
+  .stat-sub {
+    font-size: 10px;
+    color: var(--muted-dark);
+    margin-top: 2px;
+  }
+
+  .attribution {
+    font-size: 9px;
+    color: var(--muted-dark);
+    margin-top: 3px;
+    letter-spacing: 0.02em;
+  }
+
+  .attribution--light {
+    font-size: 10px;
+    color: var(--text-muted);
+    letter-spacing: 0.02em;
+    font-weight: 400;
+    text-transform: none;
+  }
+
+  .journey-rule {
+    height: 4px;
+    background: linear-gradient(90deg, var(--gold-logo), var(--green-border));
+  }
+
+  .report-body {
+    background: var(--white);
+    padding: 1.5rem 1.75rem;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1.5rem 0 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section-header:first-child { margin-top: 0; }
+
+  .section-title {
+    font-family: var(--font-head);
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--text);
+  }
+
+  .section-status {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .status--green { background: var(--green-light); color: var(--green); border: 1px solid var(--green-border); }
+
+  .finding {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1rem 1.1rem;
+    margin-bottom: 8px;
+    font-size: 13px;
+    color: var(--text-mid);
+    line-height: 1.65;
+  }
+
+  .finding.finding--good  { border-color: var(--green-border); background: #F8FDF4; }
+
+  .finding-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 5px;
+    color: var(--text-muted);
+  }
+
+  .finding--good .finding-label { color: var(--green); }
+
+  .actions-block {
+    background: var(--cream);
+    border-radius: 10px;
+    padding: 1rem 1.1rem;
+    margin-bottom: 8px;
+  }
+
+  .actions-title {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+  }
+
+  .action-item {
+    display: flex;
+    gap: 10px;
+    font-size: 13px;
+    color: var(--text-mid);
+    line-height: 1.6;
+    margin-bottom: 6px;
+  }
+
+  .action-item:last-child { margin-bottom: 0; }
+
+  .action-num {
+    font-weight: 600;
+    color: var(--gold-logo);
+    min-width: 18px;
+    flex-shrink: 0;
+  }
+
+  .mot-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+
+  .mot-table th {
+    text-align: left;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    padding: 0 8px 6px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .mot-table td {
+    padding: 7px 8px 7px 0;
+    border-bottom: 1px solid var(--cream-dark);
+    color: var(--text-mid);
+    vertical-align: top;
+  }
+
+  .mot-table tr:last-child td { border-bottom: none; }
+
+  .mot-pass { color: var(--green); font-weight: 600; }
+
+  .mot-advisories {
+    font-size: 11px;
+    color: var(--amber);
+    margin-top: 2px;
+  }
+
+  .value-block {
+    background: var(--cream);
+    border-radius: 10px;
+    padding: 1.1rem 1.25rem;
+    margin-bottom: 8px;
+  }
+
+  .value-title {
+    font-family: var(--font-head);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--text);
+    margin-bottom: 10px;
+  }
+
+  .running-costs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+    margin-bottom: 12px;
+  }
+
+  .cost-item {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.6rem 0.75rem;
+  }
+
+  .cost-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    margin-bottom: 3px;
+  }
+
+  .cost-value {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  .cost-note {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 2px;
+  }
+
+  .value-read {
+    font-size: 13px;
+    color: var(--text-mid);
+    line-height: 1.7;
+    border-top: 1px solid var(--border);
+    padding-top: 10px;
+    margin-top: 4px;
+  }
+
+  .section-75 {
+    background: var(--black);
+    color: var(--white);
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 8px;
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  .section-75-title {
+    font-family: var(--font-head);
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--gold-body);
+    margin-bottom: 6px;
+    text-transform: uppercase;
+  }
+
+  .checklist-block {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.1rem 1.25rem;
+    margin-bottom: 8px;
+  }
+
+  .checklist-title {
+    font-family: var(--font-head);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--text);
+    margin-bottom: 10px;
+  }
+
+  .checklist-item {
+    display: flex;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--text-mid);
+    line-height: 1.6;
+    margin-bottom: 5px;
+    align-items: flex-start;
+  }
+
+  .checklist-item::before {
+    content: '—';
+    color: var(--gold-logo);
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .questions-block {
+    background: var(--cream);
+    border-radius: 10px;
+    padding: 1.1rem 1.25rem;
+    margin-bottom: 8px;
+  }
+
+  .questions-title {
+    font-family: var(--font-head);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--text);
+    margin-bottom: 10px;
+  }
+
+  .question-item {
+    display: flex;
+    gap: 10px;
+    font-size: 13px;
+    color: var(--text-mid);
+    line-height: 1.6;
+    margin-bottom: 7px;
+  }
+
+  .question-item:last-child { margin-bottom: 0; }
+
+  .q-num {
+    color: var(--gold-logo);
+    font-weight: 600;
+    min-width: 18px;
+    flex-shrink: 0;
+  }
+
+  .worth-knowing {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1rem 1.1rem;
+    margin-bottom: 8px;
+  }
+
+  .worth-knowing-title {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+  }
+
+  .worth-knowing-item {
+    font-size: 13px;
+    color: var(--text-mid);
+    line-height: 1.65;
+    margin-bottom: 6px;
+    padding-left: 14px;
+    border-left: 2px solid var(--border);
+  }
+
+  .report-footer {
+    background: var(--dark);
+    padding: 1.5rem 1.75rem 1.75rem;
+    text-align: center;
+    font-size: 11px;
+    color: var(--muted-dark);
+    line-height: 1.9;
+  }
+
+  .footer-brand {
+    font-family: var(--font-head);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .footer-brand span { color: var(--gold-body); }
+
+  .footer-provenance { color: var(--hint); }
+
+  .footer-cta {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--dark);
+    background: var(--gold-body);
+    padding: 9px 20px;
+    border-radius: 100px;
+    text-decoration: none;
+  }
+
+  @media (max-width: 560px) {
+    .stats-row { grid-template-columns: 1fr 1fr; }
+    .running-costs { grid-template-columns: 1fr; }
+    .vehicle-bar { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+    .asking-price { text-align: left; }
+    .report-header { flex-direction: column; gap: 0.5rem; }
+    .report-meta { text-align: left; }
+  }
+
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="sample-banner">SAMPLE REPORT — all vehicle, seller, and data values on this page are illustrative examples for demonstration</div>
+
+  <div class="report-header">
+    <div class="brand-mark">LEGIT OR <span>LEG IT</span></div>
+    <div class="report-meta">
+      Full due diligence report<br>
+      Generated: 11 June 2026 (sample)
+    </div>
+  </div>
+
+  <div class="vehicle-bar">
+    <div>
+      <div class="reg-plate">SA21 MPL</div>
+      <div class="vehicle-name">White Vauxhall Corsa 1.2 SE 2021 · Sample Motor Company (Demo) Ltd</div>
+    </div>
+    <div class="asking-price">
+      <div class="asking-price-label">Asking price</div>
+      <div class="asking-price-value">£9,750</div>
+    </div>
+  </div>
+
+  <div class="verdict-zone">
+    <div class="verdict-banner verdict--legit">
+      <div class="verdict-icon">✅</div>
+      <div>
+        <div class="verdict-label">Likely Legit</div>
+        <div class="verdict-headline">Everything we can check on this car checks out — established seller, clean history, fair price.</div>
+        <div class="verdict-summary">The seller has been registered and trading for eleven years with a consistent review history. The car has no finance recorded, no write-off record in the sources checked, no theft marker, and a mileage record that adds up. The asking price sits inside the independent market range. Do the in-person checks below and you can buy this car with confidence.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="stats-row">
+    <div class="stat">
+      <div class="stat-label">MOT</div>
+      <div class="stat-value green">Valid ✓</div>
+      <div class="stat-sub">Expires 14 Mar 2027</div>
+    </div>
+    <div class="stat">
+      <div class="stat-label">Mileage</div>
+      <div class="stat-value green">Consistent</div>
+      <div class="stat-sub">≈7,000/yr avg</div>
+    </div>
+    <div class="stat">
+      <div class="stat-label">History</div>
+      <div class="stat-value green">Clear ✓</div>
+      <div class="stat-sub">Finance &amp; write-off</div>
+      <div class="attribution">Data provided by Experian</div>
+    </div>
+    <div class="stat">
+      <div class="stat-label">Seller</div>
+      <div class="stat-value green">Verified</div>
+      <div class="stat-sub">Trading 11 years</div>
+    </div>
+  </div>
+
+  <div class="journey-rule"></div>
+
+  <div class="report-body">
+
+    <div class="section-header">
+      <div class="section-title">The seller</div>
+      <div class="section-status status--green">Clear</div>
+    </div>
+
+    <div class="finding finding--good">
+      <div class="finding-label">Verified</div>
+      Sample Motor Company (Demo) Ltd is registered at Companies House, active, and was incorporated in March 2015 — eleven years of trading history. The registered address matches the trading address in the listing.
+    </div>
+
+    <div class="finding finding--good">
+      <div class="finding-label">Review history</div>
+      214 reviews with a 4.6 average, spread consistently across several years, with no pattern of "not as described" complaints. The business has a landline and a physical premises.
+    </div>
+
+    <div class="actions-block">
+      <div class="actions-title">What to do</div>
+      <div class="action-item">
+        <span class="action-num">1.</span>
+        <span>When you buy, check the invoice and any warranty paperwork shows this exact company name and number, matching the Companies House registration. It should — but checking takes ten seconds.</span>
+      </div>
+    </div>
+
+    <div class="section-header">
+      <div>
+        <div class="section-title">The car</div>
+        <div class="attribution--light">Vehicle history data provided by Experian · MOT data from DVSA</div>
+      </div>
+      <div class="section-status status--green">Clear</div>
+    </div>
+
+    <div class="finding" style="padding: 0.75rem 1.1rem; overflow-x: auto;">
+      <table class="mot-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Result</th>
+            <th>Mileage</th>
+            <th>Advisories / Failures</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>14 Mar 2026</td>
+            <td><span class="mot-pass">PASS</span></td>
+            <td>34,880</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>19 Mar 2025</td>
+            <td><span class="mot-pass">PASS</span></td>
+            <td>28,612</td>
+            <td><span class="mot-advisories">Front tyres wearing close to legal limit</span></td>
+          </tr>
+          <tr>
+            <td>22 Mar 2024</td>
+            <td><span class="mot-pass">PASS</span></td>
+            <td>21,407</td>
+            <td>—</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="finding finding--good">
+      <div class="finding-label">History clear</div>
+      No outstanding finance recorded. No write-off record found in the sources checked. No theft marker. The VIN is confirmed against the record and there are no plate changes.
+    </div>
+
+    <div class="finding finding--good">
+      <div class="finding-label">Mileage</div>
+      34,880 miles across five years is around 7,000 miles a year — consistent across every MOT test and entirely plausible for this car. The 2025 tyre advisory was resolved by the following test.
+    </div>
+
+    <div class="actions-block">
+      <div class="actions-title">What to do</div>
+      <div class="action-item">
+        <span class="action-num">1.</span>
+        <span>Check the VIN plate at viewing — driver's side dashboard, visible through the windscreen — against the V5C. Any mismatch, walk away.</span>
+      </div>
+      <div class="action-item">
+        <span class="action-num">2.</span>
+        <span>Ask whether the front tyres flagged in 2025 were replaced in pairs, and check the current tread while you're there.</span>
+      </div>
+    </div>
+
+    <div class="section-header">
+      <div class="section-title">The transaction</div>
+      <div class="section-status status--green">Clear</div>
+    </div>
+
+    <div class="finding finding--good">
+      <div class="finding-label">Price</div>
+      The asking price of £9,750 sits inside the independent market range of £9,400–£10,400 for this car at this mileage. It is priced to sell, not priced to lure.
+    </div>
+
+    <div class="actions-block">
+      <div class="actions-title">What to do</div>
+      <div class="action-item">
+        <span class="action-num">1.</span>
+        <span>Buying from an established dealer gives you the strongest rights a used car buyer has — under the Consumer Rights Act 2015 the car must be of satisfactory quality, and you have a 30-day right to reject it for a full refund if it's faulty. Pay at least part of it by card — see your protection below.</span>
+      </div>
+    </div>
+
+    <div class="section-header">
+      <div class="section-title">Is it worth the money</div>
+    </div>
+
+    <div class="value-block">
+      <div class="value-title">What it will cost to own</div>
+      <div class="running-costs">
+        <div class="cost-item">
+          <div class="cost-label">Road tax</div>
+          <div class="cost-value">£190/yr</div>
+        </div>
+        <div class="cost-item">
+          <div class="cost-label">Insurance group</div>
+          <div class="cost-value">Group 7</div>
+          <div class="cost-note">Get a quote before you commit · Data provided by Experian</div>
+        </div>
+        <div class="cost-item">
+          <div class="cost-label">Fuel type</div>
+          <div class="cost-value">Petrol 1.2</div>
+          <div class="cost-note">Economical — well suited to town and mixed driving</div>
+        </div>
+        <div class="cost-item">
+          <div class="cost-label">Market value</div>
+          <div class="cost-value">£9,900</div>
+          <div class="cost-note">Range: £9,400–£10,400 · Valuation by Brego</div>
+        </div>
+      </div>
+      <div class="value-read">
+        This is what a fair deal looks like. The asking price is £150 under the independent central valuation, on a car with believable mileage, a clean record, and a seller with eleven years of accountable trading behind it. Group 7 insurance and £190 road tax make it inexpensive to keep. Nothing in this report gives you a reason to negotiate hard or a reason to hesitate — the work left to do is the physical checks below, and they are checks, not worries.
+      </div>
+    </div>
+
+    <div class="section-header">
+      <div class="section-title">Your protection</div>
+    </div>
+
+    <div class="section-75">
+      <div class="section-75-title">Section 75 — use it</div>
+      Pay at least £1 of the purchase price on a credit card. Section 75 of the Consumer Credit Act makes your card provider jointly liable for the full purchase price if the car is misrepresented or not delivered. This is not optional advice. It is the single most powerful protection available to a used car buyer and most people do not use it.
+    </div>
+
+    <div class="checklist-block">
+      <div class="checklist-title">Before you go</div>
+      <div class="checklist-item">Check the VIN plate at viewing — driver's side dashboard, compare to V5C. Any mismatch — walk away.</div>
+      <div class="checklist-item">Pay at least £1 on a credit card for Section 75 protection.</div>
+      <div class="checklist-item">Do a proper test drive — streets, a dual carriageway, not just around the block.</div>
+      <div class="checklist-item">Take someone with you.</div>
+    </div>
+
+    <div class="questions-block">
+      <div class="questions-title">Questions to ask the seller</div>
+      <div class="question-item">
+        <span class="q-num">1.</span>
+        <span>Is the service history complete, and can I see it before I travel?</span>
+      </div>
+      <div class="question-item">
+        <span class="q-num">2.</span>
+        <span>Does the car come with both keys?</span>
+      </div>
+      <div class="question-item">
+        <span class="q-num">3.</span>
+        <span>Which company name will appear on my invoice and warranty?</span>
+      </div>
+    </div>
+
+    <div class="worth-knowing">
+      <div class="worth-knowing-title">Worth knowing</div>
+      <div class="worth-knowing-item">The 1.2 three-cylinder engine in this generation Corsa is generally dependable, but it likes regular oil changes — look for evidence of them in the service history rather than taking "full service history" on trust.</div>
+    </div>
+
+  </div>
+
+  <div class="report-footer">
+    <div class="footer-brand">LEGIT OR <span>LEG IT</span></div>
+    <div class="footer-provenance">Data retrieved 11 June 2026 from DVSA · Experian via One Auto API · Companies House · Brego · TfL (sample — illustrative values)</div>
+    <div>Legit or Leg It is a trading name of Maltings Digital LTD · Company no. 17253787 · ICO registration ZC167794</div>
+    <div>Findings are factual data from the named sources · Verdicts are our honest opinion drawn from those findings</div>
+    <div>Not a substitute for a physical inspection · <a href="/legal" style="color: var(--hint);">legitorlegit.co.uk/legal</a></div>
+    <a class="footer-cta" href="/">Run your own free check →</a>
+  </div>
+
+</div>
+</body>
+</html>
