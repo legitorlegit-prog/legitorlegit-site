@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Used Car Buying Guides — Legit or Leg It</title>
+<meta name="description" content="Plain-English guides to buying a used car in the UK — scams to avoid, your rights, what to check, and how to keep your money safe. From Legit or Leg It.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<style>
+  :root {
+    --dark: #18181B;
+    --dark-2: #27272A;
+    --dark-3: #3F3F46;
+    --yellow: #E8B84B;
+    --yellow-deep: #C9941A;
+    --white: #ffffff;
+    --muted: #71717A;
+    --hint: #A1A1AA;
+    --green-brand: #97C459;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Figtree', sans-serif;
+    background: var(--dark);
+    color: var(--white);
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  nav {
+    background: var(--dark);
+    padding: 0 1.25rem;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid #2A2A2A;
+  }
+
+  .nav-inner {
+    width: 100%;
+    max-width: 1040px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .brand {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 21px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--white);
+    text-decoration: none;
+  }
+
+  .brand em { font-style: normal; color: var(--yellow); }
+
+  .nav-pill {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--dark);
+    background: var(--yellow);
+    padding: 8px 18px;
+    border-radius: 100px;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .page-header {
+    padding: 3rem 1.25rem 2rem;
+    text-align: center;
+  }
+
+  .page-kicker {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.8rem;
+  }
+
+  .page-header h1 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(34px, 6vw, 48px);
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--white);
+    line-height: 1.05;
+  }
+
+  .page-header h1 em { font-style: normal; color: var(--yellow); }
+
+  .page-sub {
+    font-size: 14px;
+    color: var(--hint);
+    margin-top: 10px;
+  }
+
+  .journey-rule {
+    height: 4px;
+    background: linear-gradient(90deg, var(--yellow-deep), var(--green-brand));
+  }
+
+  .guides {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 2rem 1.25rem 3rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  @media (min-width: 880px) {
+    .guides { grid-template-columns: 1fr 1fr; }
+  }
+
+  .blog-card {
+    background: var(--dark-2);
+    border: 1px solid var(--dark-3);
+    border-left: 4px solid var(--yellow);
+    border-radius: 0 8px 8px 0;
+    padding: 1.5rem;
+  }
+
+  .blog-card-tag {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--green-brand);
+    margin-bottom: 0.5rem;
+  }
+
+  .blog-card-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+    line-height: 1.1;
+  }
+
+  .blog-card-desc {
+    font-size: 0.95rem;
+    color: var(--hint);
+    margin-bottom: 1rem;
+    line-height: 1.55;
+  }
+
+  .blog-card-link {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--yellow);
+    text-decoration: none;
+  }
+
+  .cta-strip {
+    background: #1C1C19;
+    border-top: 1px solid #2A2A2A;
+    padding: 2rem 1.25rem;
+    text-align: center;
+  }
+
+  .cta-strip p {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(20px, 4.5vw, 28px);
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--yellow);
+    margin-bottom: 14px;
+  }
+
+  .cta-strip a {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--dark);
+    background: var(--yellow);
+    padding: 10px 22px;
+    border-radius: 100px;
+    text-decoration: none;
+  }
+
+  footer {
+    background: var(--dark);
+    text-align: center;
+    padding: 1.75rem 1.25rem 2.25rem;
+    font-size: 12px;
+    color: #52525B;
+    line-height: 1.9;
+    border-top: 1px solid #2A2A2A;
+  }
+
+  footer a { color: var(--hint); text-decoration: underline; }
+  footer .company-line { color: var(--hint); }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="brand">Legit or <em>Leg It</em></a>
+    <a href="/" class="nav-pill">Run a free check</a>
+  </div>
+</nav>
+
+<div class="page-header">
+  <p class="page-kicker">The full library</p>
+  <h1>Used Car Buying <em>Guides</em></h1>
+  <p class="page-sub">Plain English, on your side, no jargon — everything we've written about buying a used car safely</p>
+</div>
+
+<div class="journey-rule"></div>
+
+<div class="guides">
+
+  <div class="blog-card">
+    <div class="blog-card-tag">Buyer Protection</div>
+    <div class="blog-card-title">The £1 Rule That Could Save You Thousands</div>
+    <div class="blog-card-desc">Put £1 on a credit card when you buy a used car and Section 75 covers the entire purchase. Most buyers don't know this. Most dealers are counting on that.</div>
+    <a class="blog-card-link" href="/blog/section-75">Read the guide →</a>
+  </div>
+
+  <div class="blog-card">
+    <div class="blog-card-tag">Scam Awareness</div>
+    <div class="blog-card-title">Phrases in a Used Car Listing That Should Make You Stop</div>
+    <div class="blog-card-desc">These phrases are designed to make you skip the checks. Trading Standards, fraud researchers, and a Visa study of 6,000 adults all point to the same patterns.</div>
+    <a class="blog-card-link" href="/blog/used-car-listing-phrases">Read the guide →</a>
+  </div>
+
+  <div class="blog-card">
+    <div class="blog-card-tag">First Car Guide</div>
+    <div class="blog-card-title">Your First Car — What Your Money Actually Buys</div>
+    <div class="blog-card-desc">The honest guide for 2026. Real cars, real insurance groups, real road tax. From £2,500 Saturday job money to £5,000 if granny came through.</div>
+    <a class="blog-card-link" href="/blog/first-car-saturday-job">Read the guide →</a>
+  </div>
+
+  <div class="blog-card">
+    <div class="blog-card-tag">Dealer vs Private Seller</div>
+    <div class="blog-card-title">Which is Safer, Dealership or Private Seller?</div>
+    <div class="blog-card-desc">Most people assume dealer means safer. The reality is more complicated — and the gap is where the scams live.</div>
+    <a class="blog-card-link" href="/blog/dealership-or-private-seller">Read the guide →</a>
+  </div>
+
+  <div class="blog-card">
+    <div class="blog-card-tag">Best Car Check 2026</div>
+    <div class="blog-card-title">The Best Car Check for Used Car Buyers in the UK</div>
+    <div class="blog-card-desc">Most car checks do one thing. They check the car. The other half of the picture is who you're buying from.</div>
+    <a class="blog-card-link" href="/blog/best-car-check-2026-uk">Read the guide →</a>
+  </div>
+
+  <div class="blog-card">
+    <div class="blog-card-tag">Facebook Marketplace</div>
+    <div class="blog-card-title">Buying a Car on Facebook Marketplace</div>
+    <div class="blog-card-desc">Don't pay dealer prices for private seller risk. How to tell which kind of seller you're actually dealing with.</div>
+    <a class="blog-card-link" href="/blog/buying-a-car-on-facebook-marketplace">Read the guide →</a>
+  </div>
+
+  <div class="blog-card">
+    <div class="blog-card-tag">Private Sale Guide</div>
+    <div class="blog-card-title">What to Check When Buying a Car Privately</div>
+    <div class="blog-card-desc">Run the data check first. Then check the car in daylight, at the seller's home address. And tell someone where you're going.</div>
+    <a class="blog-card-link" href="/blog/what-to-check-private-sale">Read the guide →</a>
+  </div>
+
+  <div class="blog-card">
+    <div class="blog-card-tag">MOT Guide</div>
+    <div class="blog-card-title">How to Read a Car's MOT History</div>
+    <div class="blog-card-desc">Most people check whether it passed or failed. What the MOT history actually shows is a pattern of ownership — repeated in everything you can't see from the listing.</div>
+    <a class="blog-card-link" href="/blog/how-to-read-mot-history">Read the guide →</a>
+  </div>
+
+  <div class="blog-card">
+    <div class="blog-card-tag">Scam Awareness</div>
+    <div class="blog-card-title">Is That Website Legit? How to Check Before You Hand Over Any Money</div>
+    <div class="blog-card-desc">Two minutes of checks before you pay can save you a lot more than embarrassment. Here's what to look for — and what we do automatically.</div>
+    <a class="blog-card-link" href="/blog/how-to-check-a-website">Read the guide →</a>
+  </div>
+
+  <div class="blog-card">
+    <div class="blog-card-tag">Car History</div>
+    <div class="blog-card-title">Damage Repaired? What the Categories Actually Mean</div>
+    <div class="blog-card-desc">Cat S, Cat N, Cat A, Cat B — what the letters mean, what to do if you find one, and why an undeclared category is a people problem, not a car problem.</div>
+    <a class="blog-card-link" href="/blog/damage-repaired-what-the-categories-mean">Read the guide →</a>
+  </div>
+
+  <div class="blog-card">
+    <div class="blog-card-tag">Car History</div>
+    <div class="blog-card-title">How to Tell If a Used Car Has Hidden Damage</div>
+    <div class="blog-card-desc">1 in 5 used cars has a hidden accident history. Here's what private repairs look like, what to look for at the viewing, and why a wet car should make you walk away.</div>
+    <a class="blog-card-link" href="/blog/how-to-tell-if-a-used-car-has-hidden-damage">Read the guide →</a>
+  </div>
+
+</div>
+
+<div class="cta-strip">
+  <p>Have you Legit checked it</p>
+  <a href="/">Run the free check</a>
+</div>
+
+<footer>
+  <span class="company-line">Legit or Leg It is a trading name of Maltings Digital LTD · Company no. 17253787 · Registered in England</span><br>
+  ICO registered · <a href="/legal#privacy">Privacy policy</a> · <a href="/legal#terms">Terms and conditions</a><br>
+  Data sources: DVSA, Companies House, TfL · Full reports: vehicle history data provided by Experian via One Auto API
+</footer>
+
+</body>
+</html>
