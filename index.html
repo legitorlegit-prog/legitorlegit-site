@@ -477,10 +477,46 @@
   }
 
   .teaser-sub {
-    font-size: 14px;
-    color: rgba(255,255,255,0.4);
-    font-style: italic;
+    font-size: 15px;
+    color: rgba(255,255,255,0.65);
+    max-width: 620px;
+    margin: 0 auto;
+    line-height: 1.6;
   }
+
+  .teaser-note {
+    font-size: 12px;
+    color: rgba(255,255,255,0.35);
+    font-style: italic;
+    margin-top: 10px;
+  }
+
+  /* ============ THE REVEAL ============ */
+  .reveal-section {
+    background: var(--dark);
+    padding: 3rem 1.25rem;
+    text-align: center;
+  }
+
+  .reveal-inner { max-width: 720px; margin: 0 auto; }
+
+  .reveal-headline {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(26px, 5.5vw, 40px);
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.1;
+    color: var(--yellow);
+    margin-bottom: 16px;
+  }
+
+  .reveal-text {
+    font-size: 15px;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.75;
+  }
+
+  .reveal-text strong { color: var(--white); font-weight: 600; }
 
   /* ============ JOURNEY RULE ============ */
   .journey-rule {
@@ -582,6 +618,66 @@
   .pricing-per { font-size: 12px; color: var(--hint); }
   .pricing-card.featured .pricing-per { color: rgba(0,0,0,0.4); }
 
+  /* ============ WHAT'S IN THE REPORT ============ */
+  .contents-section {
+    padding: 1rem 1.25rem 1.5rem;
+    max-width: 1040px;
+    margin: 0 auto;
+  }
+
+  .contents-heading {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--dark);
+    text-align: center;
+    margin-bottom: 0.4rem;
+  }
+
+  .contents-sub {
+    font-size: 14px;
+    color: var(--muted);
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .contents-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  @media (min-width: 880px) {
+    .contents-grid { grid-template-columns: 1fr 1fr 1fr; }
+  }
+
+  .content-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--yellow-deep);
+    border-radius: var(--radius-sm);
+    padding: 1.25rem;
+  }
+
+  .content-card-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--dark);
+    margin-bottom: 8px;
+  }
+
+  .content-card p {
+    font-size: 13.5px;
+    color: var(--muted);
+    line-height: 1.65;
+  }
+
+  .content-card p strong { color: var(--dark); font-weight: 600; }
+
   /* ============ TRUST ============ */
   .trust-section {
     padding: 1rem 1.25rem 2.5rem;
@@ -655,6 +751,12 @@
     border-radius: 0 8px 8px 0;
     padding: 1.5rem;
     text-align: left;
+  }
+
+  .blog-card-all {
+    background: rgba(232, 184, 75, 0.06);
+    border-color: var(--yellow-deep);
+    border-left-color: var(--yellow);
   }
 
   .blog-card-tag {
@@ -837,7 +939,7 @@
   <div class="hero-grid">
 
     <div class="hero-copy">
-      <div class="hero-eyebrow">Free car check</div>
+      <div class="hero-eyebrow">The car check that checks the seller too</div>
       <h1 class="hero-headline">Have you <em>Legit</em><br>checked it?</h1>
       <div class="hero-steps">
         <div class="hero-step">
@@ -937,7 +1039,16 @@
 <!-- TEASER -->
 <div class="teaser">
   <p class="teaser-headline">History is only half the story</p>
-  <p class="teaser-sub">A new kind of car check — coming soon</p>
+  <p class="teaser-sub">Every other car check tells you about the car. Ours also checks who's selling it, whether the price matches the market, and whether you'd be protected if it went wrong.</p>
+  <p class="teaser-note">Full reports coming soon</p>
+</div>
+
+<!-- THE REVEAL -->
+<div class="reveal-section">
+  <div class="reveal-inner">
+    <p class="reveal-headline">The car can be completely clean and the transaction is still a scam</p>
+    <p class="reveal-text">A car with no finance, no write-off and perfect MOT history can be sold by someone who doesn't own it, through a company that doesn't exist, at a price designed to make you skip the checks. The car's records were never the problem. <strong>Every other UK car check looks at the car. Ours checks the seller and the deal as well — same report, one click.</strong></p>
+  </div>
 </div>
 
 <div class="journey-rule"></div>
@@ -951,7 +1062,6 @@
   <div class="pricing-cards">
 
     <a href="/report?pack=5" class="pricing-card">
-      <span class="best-value">Best value</span>
       <div class="pricing-name">Check your longlist</div>
       <div class="pricing-desc">Five full reports — £8 each</div>
       <div class="pricing-bottom">
@@ -961,7 +1071,6 @@
     </a>
 
     <a href="/report?pack=3" class="pricing-card featured">
-      <span class="best-value">Most popular</span>
       <div class="pricing-name">Check your shortlist</div>
       <div class="pricing-desc">Three full reports — £10 each</div>
       <div class="pricing-bottom">
@@ -971,7 +1080,6 @@
     </a>
 
     <a href="/report?pack=1" class="pricing-card">
-      <span class="badge-spacer"></span>
       <div class="pricing-name">Just the one</div>
       <div class="pricing-desc">Single full report</div>
       <div class="pricing-bottom">
@@ -979,6 +1087,30 @@
         <span class="pricing-per">one report</span>
       </div>
     </a>
+
+  </div>
+</div>
+
+<!-- WHAT'S IN THE REPORT — Experian attribution per One Auto compliance guidance -->
+<div class="contents-section">
+  <h2 class="contents-heading">What's in the full report</h2>
+  <p class="contents-sub">One report. The car, the seller, and the deal — checked together</p>
+  <div class="contents-grid">
+
+    <div class="content-card">
+      <div class="content-card-title">The car</div>
+      <p><strong>Vehicle history check data provided by Experian, including:</strong> outstanding finance, insurance write-off category, theft markers, VIN confirmation, and plate change history. Plus the car's full MOT and mileage record direct from the DVSA.</p>
+    </div>
+
+    <div class="content-card">
+      <div class="content-card-title">The seller</div>
+      <p><strong>Who you're actually buying from.</strong> Dealer verification against the Companies House register — registration, status, and trading history — because your rights as a buyer are only as good as the company behind the invoice.</p>
+    </div>
+
+    <div class="content-card">
+      <div class="content-card-title">The deal</div>
+      <p><strong>Is it worth the money.</strong> An independent market valuation, what the car will actually cost to run — road tax, insurance group, fuel — and a checklist built for your exact purchase, with the questions to ask before you hand over a penny.</p>
+    </div>
 
   </div>
 </div>
@@ -997,6 +1129,10 @@
     <div class="trust-dot"></div>
     <span>We don't store your registration number — each check runs fresh and is not retained</span>
   </div>
+  <div class="trust-item">
+    <div class="trust-dot"></div>
+    <span><strong>No account, no email, no cookies, no tracking.</strong> We can't leak your data in a breach — we never have it. And we can't send you marketing emails — we don't know your email address.</span>
+  </div>
 </div>
 
 <!-- ============ ACT THREE — DARK ============ -->
@@ -1007,45 +1143,10 @@
     <div class="blog-grid">
 
       <div class="blog-card">
-        <div class="blog-card-tag">First Car Guide</div>
-        <div class="blog-card-title">Your First Car — What Your Money Actually Buys</div>
-        <div class="blog-card-desc">The honest guide for 2026. Real cars, real insurance groups, real road tax. From £2,500 Saturday job money to £5,000 if granny came through.</div>
-        <a class="blog-card-link" href="/blog/first-car-saturday-job">Read the guide →</a>
-      </div>
-
-      <div class="blog-card">
         <div class="blog-card-tag">Buyer Protection</div>
         <div class="blog-card-title">The £1 Rule That Could Save You Thousands</div>
         <div class="blog-card-desc">Put £1 on a credit card when you buy a used car and Section 75 covers the entire purchase. Most buyers don't know this. Most dealers are counting on that.</div>
         <a class="blog-card-link" href="/blog/section-75">Read the guide →</a>
-      </div>
-
-      <div class="blog-card">
-        <div class="blog-card-tag">Dealer vs Private Seller</div>
-        <div class="blog-card-title">Which is Safer, Dealership or Private Seller?</div>
-        <div class="blog-card-desc">Most people assume dealer means safer. The reality is more complicated — and the gap is where the scams live.</div>
-        <a class="blog-card-link" href="/blog/dealership-or-private-seller">Read the guide →</a>
-      </div>
-
-      <div class="blog-card">
-        <div class="blog-card-tag">Best Car Check 2026</div>
-        <div class="blog-card-title">The Best Car Check for Used Car Buyers in the UK</div>
-        <div class="blog-card-desc">Most car checks do one thing. They check the car. The other half of the picture is who you're buying from.</div>
-        <a class="blog-card-link" href="/blog/best-car-check-2026-uk">Read the guide →</a>
-      </div>
-
-      <div class="blog-card">
-        <div class="blog-card-tag">Facebook Marketplace</div>
-        <div class="blog-card-title">Buying a Car on Facebook Marketplace</div>
-        <div class="blog-card-desc">Don't pay dealer prices for private seller risk. How to tell which kind of seller you're actually dealing with.</div>
-        <a class="blog-card-link" href="/blog/buying-a-car-on-facebook-marketplace">Read the guide →</a>
-      </div>
-
-      <div class="blog-card">
-        <div class="blog-card-tag">Private Sale Guide</div>
-        <div class="blog-card-title">What to Check When Buying a Car Privately</div>
-        <div class="blog-card-desc">Run the data check first. Then check the car in daylight, at the seller's home address. And tell someone where you're going.</div>
-        <a class="blog-card-link" href="/blog/what-to-check-private-sale">Read the guide →</a>
       </div>
 
       <div class="blog-card">
@@ -1056,31 +1157,17 @@
       </div>
 
       <div class="blog-card">
-        <div class="blog-card-tag">MOT Guide</div>
-        <div class="blog-card-title">How to Read a Car's MOT History</div>
-        <div class="blog-card-desc">Most people check whether it passed or failed. What the MOT history actually shows is a pattern of ownership — repeated in everything you can't see from the listing.</div>
-        <a class="blog-card-link" href="/blog/how-to-read-mot-history">Read the guide →</a>
+        <div class="blog-card-tag">First Car Guide</div>
+        <div class="blog-card-title">Your First Car — What Your Money Actually Buys</div>
+        <div class="blog-card-desc">The honest guide for 2026. Real cars, real insurance groups, real road tax. From £2,500 Saturday job money to £5,000 if granny came through.</div>
+        <a class="blog-card-link" href="/blog/first-car-saturday-job">Read the guide →</a>
       </div>
 
-      <div class="blog-card">
-        <div class="blog-card-tag">Scam Awareness</div>
-        <div class="blog-card-title">Is That Website Legit? How to Check Before You Hand Over Any Money</div>
-        <div class="blog-card-desc">Two minutes of checks before you pay can save you a lot more than embarrassment. Here's what to look for — and what we do automatically.</div>
-        <a class="blog-card-link" href="/blog/how-to-check-a-website">Read the guide →</a>
-      </div>
-
-      <div class="blog-card">
-        <div class="blog-card-tag">Car History</div>
-        <div class="blog-card-title">Damage Repaired? What the Categories Actually Mean</div>
-        <div class="blog-card-desc">Cat S, Cat N, Cat A, Cat B — what the letters mean, what to do if you find one, and why an undeclared category is a people problem, not a car problem.</div>
-        <a class="blog-card-link" href="/blog/damage-repaired-what-the-categories-mean">Read the guide →</a>
-      </div>
-
-      <div class="blog-card">
-        <div class="blog-card-tag">Car History</div>
-        <div class="blog-card-title">How to Tell If a Used Car Has Hidden Damage</div>
-        <div class="blog-card-desc">1 in 5 used cars has a hidden accident history. Here's what private repairs look like, what to look for at the viewing, and why a wet car should make you walk away.</div>
-        <a class="blog-card-link" href="/blog/how-to-tell-if-a-used-car-has-hidden-damage">Read the guide →</a>
+      <div class="blog-card blog-card-all">
+        <div class="blog-card-tag">The full library</div>
+        <div class="blog-card-title">All the Guides</div>
+        <div class="blog-card-desc">MOT history, dealer vs private, distance sales, write-off categories, hidden damage, Facebook Marketplace — everything we've written, in one place.</div>
+        <a class="blog-card-link" href="/blog/">Browse all guides →</a>
       </div>
 
     </div>
@@ -1110,7 +1197,7 @@
   <span class="company-line">Legit or Leg It is a trading name of Maltings Digital LTD · Company no. 17253787 · Registered in England</span><br>
   ICO registered · <a href="/legal">Privacy policy</a> · <a href="/legal">Terms and conditions</a><br>
   This service provides information only and does not constitute legal or financial advice<br>
-  Data sources: DVSA, Companies House, TfL ULEZ
+  Data sources: DVSA, Companies House, TfL · Full reports: vehicle history data provided by Experian via One Auto API
 </footer>
 
 <!-- SHORTLIST STRIP -->
