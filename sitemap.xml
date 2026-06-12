@@ -1,103 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
   <url>
     <loc>https://legitorlegit.co.uk/</loc>
     <lastmod>2026-06-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
   <url>
     <loc>https://legitorlegit.co.uk/legal/</loc>
     <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
-
   <url>
     <loc>https://legitorlegit.co.uk/blog/dealership-or-private-seller</loc>
     <lastmod>2026-05-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <url>
     <loc>https://legitorlegit.co.uk/blog/best-car-check-2026-uk</loc>
     <lastmod>2026-05-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <url>
     <loc>https://legitorlegit.co.uk/blog/buying-a-car-on-facebook-marketplace</loc>
     <lastmod>2026-05-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <url>
     <loc>https://legitorlegit.co.uk/blog/what-to-check-private-sale</loc>
     <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <url>
     <loc>https://legitorlegit.co.uk/blog/used-car-listing-phrases</loc>
     <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <url>
     <loc>https://legitorlegit.co.uk/blog/how-to-read-mot-history</loc>
     <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
-<url>
-        <loc>https://legitorlegit.co.uk/blog/how-to-check-a-website</loc>
-        <lastmod>2026-06-03</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
+  <url>
+    <loc>https://legitorlegit.co.uk/blog/how-to-check-a-website</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
   <url>
     <loc>https://legitorlegit.co.uk/blog/damage-repaired-what-the-categories-mean</loc>
     <lastmod>2026-06-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <url>
     <loc>https://legitorlegit.co.uk/blog/how-to-tell-if-a-used-car-has-hidden-damage</loc>
     <lastmod>2026-06-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
-<url>
+  <url>
     <loc>https://legitorlegit.co.uk/blog/first-car-saturday-job</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
-  <url><loc>https://legitorlegit.co.uk/blog/</loc><lastmod>2026-06-11</lastmod></url>
-<url><loc>https://legitorlegit.co.uk/sample-report</loc><lastmod>2026-06-11</lastmod></url>
-<url><loc>https://legitorlegit.co.uk/sample-report-leg-it</loc><lastmod>2026-06-11</lastmod></url>
-<url>
-  
-  <loc>https://legitorlegit.co.uk/blog/section-75</loc>
-  <lastmod>2026-06-09</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-</url>
   <url>
-  <loc>https://legitorlegit.co.uk/blog/</loc>
-  <lastmod>2026-06-11</lastmod>
-</url>
-  
+    <loc>https://legitorlegit.co.uk/blog/section-75</loc>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://legitorlegit.co.uk/blog/used-car-buyer-rights-uk</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://legitorlegit.co.uk/blog/</loc>
+    <lastmod>2026-06-12</lastmod>
+  </url>
+  <url>
+    <loc>https://legitorlegit.co.uk/sample-report</loc>
+    <lastmod>2026-06-11</lastmod>
+  </url>
+  <url>
+    <loc>https://legitorlegit.co.uk/sample-report-leg-it</loc>
+    <lastmod>2026-06-11</lastmod>
+  </url>
 </urlset>
